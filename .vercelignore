@@ -1,0 +1,11 @@
+.git/
+.history/
+.tools/
+node_modules/
+dist/
+artifacts/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.env*
+*.log
