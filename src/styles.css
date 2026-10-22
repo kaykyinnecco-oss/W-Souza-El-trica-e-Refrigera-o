@@ -227,9 +227,8 @@ h2 span {
   justify-content: center;
   width: 86px;
   height: 78px;
-  background: var(--navy);
-  padding: 5px 8px;
-  border-radius: 10px;
+  background: transparent;
+  padding: 0;
   flex-shrink: 0;
 }
 .brand img {

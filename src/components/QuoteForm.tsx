@@ -1,8 +1,9 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
-import { ArrowUpRight, Check, LockKeyhole } from "lucide-react";
+import { Check, LockKeyhole } from "lucide-react";
 import { formServices } from "../config";
 import { formatPhone, quoteMessage, whatsappUrl } from "../whatsapp";
+import { WhatsAppIcon } from "./UI";
 export default function QuoteForm() {
   const [phone, setPhone] = useState("");
   const [result, setResult] = useState("");
@@ -142,7 +143,7 @@ export default function QuoteForm() {
       ) : null}
       <button className="button form-submit" type="submit">
         Solicitar orçamento pelo WhatsApp
-        <ArrowUpRight size={19} />
+        <WhatsAppIcon size={19} />
       </button>
       {result ? (
         <div className="form-success" role="status">

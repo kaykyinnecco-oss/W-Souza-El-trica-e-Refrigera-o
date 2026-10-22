@@ -83,7 +83,11 @@ export function Button({
       rel={external ? "noopener noreferrer" : undefined}
     >
       {children}
-      <ArrowUpRight size={18} aria-hidden="true" />
+      {context ? (
+        <WhatsAppIcon size={19} />
+      ) : (
+        <ArrowUpRight size={18} aria-hidden="true" />
+      )}
     </a>
   );
 }
