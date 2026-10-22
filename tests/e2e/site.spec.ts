@@ -22,9 +22,20 @@ test("desktop: navegação, imagens, CTAs, equipamentos e acessibilidade", async
   expect(links.length).toBeGreaterThan(15);
   for (const href of links) {
     const u = new URL(href);
-    expect(u.pathname).toBe("/5521993265129");
+    expect(u.pathname).toBe("/5522998317590");
     expect(u.searchParams.get("text")).toContain("W Souza");
   }
+  await expect(page.locator(".owner-card img")).toHaveAttribute(
+    "src",
+    "/assets/proprietario.webp",
+  );
+  await expect(page.locator(".map-frame iframe")).toHaveAttribute(
+    "title",
+    /Localização da W Souza/,
+  );
+  await expect(
+    page.getByText("R. Mal. Deodoro - Centro, Macaé - RJ, 27910-310"),
+  ).toHaveCount(2);
   await expect(page.locator(".system-panel")).toHaveCount(6);
   const showcase = page.getByRole("region", {
     name: "Showcase horizontal de climatização",
@@ -35,9 +46,13 @@ test("desktop: navegação, imagens, CTAs, equipamentos e acessibilidade", async
       .getByRole("button", { name: "Próximo sistema", exact: true })
       .click();
   await showcase.press("Home");
-  await page.getByRole("button", { name: "Elétrica", exact: true }).click();
-  await expect(page.locator(".project-card")).toHaveCount(1);
-  await expect(page.locator(".project-copy")).toContainText("Cuidado");
+  await page
+    .getByRole("button", { name: "Unidade externa", exact: true })
+    .click();
+  await expect(page.locator(".project-card")).toHaveCount(3);
+  await expect(page.locator(".project-copy").first()).toContainText(
+    "Unidade externa",
+  );
   await page.getByRole("button", { name: "Todos", exact: true }).click();
   for (const section of [
     "#inicio",
@@ -129,7 +144,7 @@ test("formulário: validação e mensagem completa, sem enviar mensagem real", a
     () => (window as unknown as { testUrl: string }).testUrl,
   );
   const url = new URL(opened);
-  expect(url.pathname).toBe("/5521993265129");
+  expect(url.pathname).toBe("/5522998317590");
   const message = url.searchParams.get("text");
   for (const value of [
     "João & Ana",

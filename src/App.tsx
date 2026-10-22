@@ -5,6 +5,7 @@ import {
   Check,
   House,
   Instagram,
+  MapPin,
   MessageCircle,
   Phone,
   ShieldCheck,
@@ -338,22 +339,31 @@ export default function App() {
 
         <section id="sobre" className="section about-section">
           <div className="container about-layout">
-            <div data-reveal>
+            <div className="about-copy" data-reveal>
               <Eyebrow>ATENDIMENTO PRÓXIMO</Eyebrow>
               <h2>
-                Pode contar.
+                Quem cuida do
                 <br />
-                <span>
-                  A conversa começa
-                  <br />
-                  com você.
-                </span>
+                <span>seu conforto de perto.</span>
               </h2>
               <p>
-                Sem complicar o que pode ser simples. Um contato direto para
-                entender seu ambiente e cuidar do que precisa ser feito.
+                À frente da W Souza, Wellington acompanha o serviço e conversa
+                diretamente com você para entender o ambiente e o que precisa
+                ser feito.
               </p>
             </div>
+            <figure className="owner-card" data-reveal>
+              <Photo
+                src={company.images.owner}
+                alt="Wellington Souza, responsável pela W Souza, durante um serviço de climatização"
+                width={1000}
+                height={1333}
+              />
+              <figcaption>
+                <strong>Wellington Souza</strong>
+                <span>W Souza Ar-Condicionado e Elétrica</span>
+              </figcaption>
+            </figure>
             <ol className="care-steps">
               {[
                 {
@@ -475,6 +485,36 @@ export default function App() {
             </div>
             <QuoteForm />
           </div>
+          <div className="container location-panel" data-reveal>
+            <div className="location-copy">
+              <Eyebrow>ONDE ESTAMOS</Eyebrow>
+              <h2>Atendimento em Macaé e região.</h2>
+              <p>
+                <MapPin size={20} aria-hidden="true" />
+                <span>{company.address}</span>
+              </p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Wsouza%20Ar-condicionado%20e%20el%C3%A9trica%20em%20geral%2C%20Maca%C3%A9%20RJ"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Abrir rota no Google Maps
+                <ArrowUpRight size={17} />
+              </a>
+            </div>
+            <div className="map-frame">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.3492341540746!2d-41.782034599999996!3d-22.374224499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9625fe4ee522d5%3A0xff555a5b2dfbbc26!2sWsouza%20Ar-condicionado%20e%20el%C3%A9trica%20em%20geral!5e1!3m2!1spt-BR!2sbr!4v1792671053268!5m2!1spt-BR!2sbr"
+                width="600"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="Localização da W Souza Ar-Condicionado e Elétrica em Macaé"
+              />
+            </div>
+          </div>
         </section>
       </main>
       <footer>
@@ -496,6 +536,7 @@ export default function App() {
                 Cuidado para sua casa e seu comércio.
               </p>
               {company.region ? <p>{company.region}</p> : null}
+              <p>{company.address}</p>
             </div>
             <div className="footer-links">
               <span>COMO PODEMOS AJUDAR</span>

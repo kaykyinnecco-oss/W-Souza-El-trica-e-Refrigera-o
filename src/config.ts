@@ -1,9 +1,10 @@
 export const company = {
   name: "W Souza Elétrica e Refrigeração",
-  whatsapp: "5521993265129",
-  phoneDisplay: "(21) 99326-5129",
+  whatsapp: "5522998317590",
+  phoneDisplay: "(22) 99831-7590",
+  address: "R. Mal. Deodoro - Centro, Macaé - RJ, 27910-310",
   instagram: "https://www.instagram.com/wsouzaeletrica/",
-  region: "", // Confirmar cidade e região antes da publicação.
+  region: "Macaé e região",
   googleReviews:
     "https://www.google.com/search?q=W+Souza+el%C3%A9trica+e+refrigera%C3%A7%C3%A3o",
   logo: "/assets/logo.webp",
@@ -13,6 +14,7 @@ export const company = {
     architecture: "/assets/architecture.webp",
     office: "/assets/office.webp",
     maintenance: "/assets/maintenance.webp",
+    owner: "/assets/proprietario.webp",
   },
   // Marcas atendidas confirmadas pelo cliente. Não implica assistência autorizada.
   brands: [
@@ -199,33 +201,39 @@ export const formServices = [
 ];
 export const projects = [
   {
-    title: "Ar-condicionado para sua casa.",
-    category: "Residencial",
-    image: company.images.hero,
-    alt: "Sala contemporânea com ar-condicionado Split na parede de madeira",
+    title: "Split Samsung instalado e em funcionamento.",
+    category: "Ambiente interno",
+    image: "/assets/instalacao-01.webp",
+    alt: "Ar-condicionado Split Samsung instalado pela W Souza",
   },
   {
-    title: "Conforto também no comércio.",
-    category: "Comercial",
-    image: company.images.office,
-    alt: "Escritório iluminado com mesas de trabalho e vegetação",
+    title: "Unidade externa com acabamento cuidadoso.",
+    category: "Unidade externa",
+    image: "/assets/instalacao-02.webp",
+    alt: "Unidade externa Midea instalada pela W Souza",
   },
   {
-    title: "Cuidado com a instalação elétrica.",
-    category: "Elétrica",
-    image: company.images.electrical,
-    alt: "Profissional verificando quadro de distribuição elétrico",
+    title: "Condensadora Samsung instalada com suporte.",
+    category: "Unidade externa",
+    image: "/assets/instalacao-03.webp",
+    alt: "Condensadora Samsung instalada em suporte pela W Souza",
   },
   {
-    title: "Limpeza e manutenção do Split.",
-    category: "Manutenção",
-    image: company.images.maintenance,
-    alt: "Técnico removendo filtro de ar-condicionado Split para limpeza",
+    title: "Climatização integrada ao ambiente.",
+    category: "Ambiente interno",
+    image: "/assets/instalacao-04.webp",
+    alt: "Ar-condicionado Split instalado em quarto pela W Souza",
   },
   {
-    title: "Preparação do seu ambiente.",
-    category: "Infraestrutura",
-    image: company.images.architecture,
-    alt: "Interior residencial contemporâneo com iluminação e acabamentos naturais",
+    title: "Instalação residencial de Split Midea.",
+    category: "Ambiente interno",
+    image: "/assets/instalacao-05.webp",
+    alt: "Ar-condicionado Split Midea instalado pela W Souza",
+  },
+  {
+    title: "Unidade externa Midea com tubulação protegida.",
+    category: "Unidade externa",
+    image: "/assets/instalacao-06.webp",
+    alt: "Unidade externa Midea com tubulação protegida instalada pela W Souza",
   },
 ];

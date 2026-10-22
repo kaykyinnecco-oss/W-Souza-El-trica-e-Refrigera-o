@@ -17,7 +17,7 @@ test("usa exclusivamente o número oficial e preserva acentos, quebras e caracte
   });
   const url = new URL(whatsappUrl(message));
   assert.equal(url.origin, "https://wa.me");
-  assert.equal(url.pathname, "/5521993265129");
+  assert.equal(url.pathname, "/5522998317590");
   assert.equal(url.searchParams.get("text"), message);
   assert.match(message, /João & Ana/);
   assert.match(message, /220 V \+ iluminação #2\?/);
@@ -25,9 +25,9 @@ test("usa exclusivamente o número oficial e preserva acentos, quebras e caracte
 test("não produz redirecionamento para configuração incompleta ou inválida", () => {
   for (const phone of [
     "",
-    "21993265129",
-    "+5521993265129",
-    "5521993265129?text=errado",
+    "22998317590",
+    "+5522998317590",
+    "5522998317590?text=errado",
     "5511000000000",
   ])
     assert.throws(() => whatsappUrl("teste", phone));

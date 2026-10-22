@@ -3,21 +3,8 @@ import { ArrowUpRight } from "lucide-react";
 import { projects } from "../config";
 import { Eyebrow, Photo } from "./UI";
 import { contextUrl } from "../whatsapp";
-const categories = [
-  "Todos",
-  "Residencial",
-  "Comercial",
-  "Elétrica",
-  "Manutenção",
-  "Infraestrutura",
-];
-const displayOrder = [
-  "Manutenção",
-  "Elétrica",
-  "Residencial",
-  "Infraestrutura",
-  "Comercial",
-];
+const categories = ["Todos", "Ambiente interno", "Unidade externa"];
+const displayOrder = ["Ambiente interno", "Unidade externa"];
 export default function Gallery() {
   const [filter, setFilter] = useState("Todos");
   const filtered = projects
@@ -31,16 +18,16 @@ export default function Gallery() {
       <div className="container">
         <div className="section-heading" data-reveal>
           <div>
-            <Eyebrow>EM CASA OU NO COMÉRCIO</Eyebrow>
+            <Eyebrow>TRABALHOS REALIZADOS</Eyebrow>
             <h2>
-              Serviços que fazem parte
+              Instalações feitas
               <br />
-              <span>da sua rotina.</span>
+              <span>com cuidado.</span>
             </h2>
           </div>
           <p>
-            Instalação, manutenção e pequenos cuidados. As imagens abaixo são
-            ilustrativas.
+            Conheça alguns serviços de climatização já executados pela W Souza
+            em ambientes residenciais e comerciais.
           </p>
         </div>
         <div
@@ -69,7 +56,7 @@ export default function Gallery() {
             >
               <Photo src={p.image} alt={p.alt} width={1400} height={1000} />
               <span className="project-label">
-                {p.category.toUpperCase()} · IMAGEM ILUSTRATIVA
+                {p.category.toUpperCase()} · SERVIÇO REALIZADO
               </span>
               <div className="project-copy">
                 <span>{p.category}</span>
@@ -80,8 +67,8 @@ export default function Gallery() {
           ))}
         </div>
         <p className="gallery-note">
-          Imagens ilustrativas, incluindo ambientes gerados por IA. Não
-          representam obras executadas pela W Souza.
+          Registros de instalações realizadas pela W Souza. Cada projeto é
+          avaliado conforme as condições do local e do equipamento.
         </p>
       </div>
     </section>
